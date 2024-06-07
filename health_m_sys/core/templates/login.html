@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - NFT Marketplace Mobile App Layout</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+
+</head>
+<body style="font-weight: Poppins;">
+<!-- partial:index.partial.html -->
+<!-- Please ❤ this if you like it! -->
+<!-- Follow Me https://codepen.io/designfenix -->
+<p id="dev"><a href="https://codepen.io/designfenix/" target="_blank" style="font-family: Poppins;">health sync</a> </p>
+<div class="iphone-x">
+	<i>Speaker</i>
+	<b>Camera</b>
+	<div class="content">
+		<main>
+		
+				<center>
+		
+					
+                    <div class="login-form" style="opacity: 80%; margin-top: 100px; opacity: 80%;">
+                        <img src="https://media0.giphy.com/media/tXx9UP9TacvVa6kBCE/giphy.gif?cid=6c09b952eztk9dmbjzord37sw2kixg48h7e18qmm6zw9djle&ep=v1_stickers_related&rid=giphy.gif&ct=s" alt="" style="height: 120px;">
+                        <br>
+                        <h2 style="font-weight: bold;">health sync</h2>
+                        <form method="post">
+                            {% csrf_token %}
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <div style="color: red;">{{ message }}</div>
+                                {% endfor %}
+                            {% endif %}
+                            <input type="text" name="username" placeholder="Username" required>
+                            <input type="password" name="password" placeholder="Password" required>
+                            <button type="submit">Login</button>
+                        </form>
+                        <span style="color: black;">dont have an account?<a href="{% url 'register' %}" style="text-decoration: none;"> register here</a></span>
+                        <p style="font-weight: bold; font-size: x-small;">authanticate</p>
+                    </div>
+
+                </center>
+				
+	
+		</main>
+	</div>
+</div>
+
+</div>
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+body {
+  background: #f4f6fc;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+@media (min-width: 375px) {
+  body {
+    align-items: center;
+  }
+}
+
+.iphone-x {
+  position: relative;
+  margin: 0px auto;
+  width: 100%;
+  height: 100vh;
+  background-color: #fbfbfb;
+  border-radius: 0;
+  box-shadow: 0px 0px 0px 11px #f1f1f1, 0px 0px 0px 13px #eeeeee, 0px 0px 0px 20px #ececec, 0 55px 40px rgba(0, 0, 0, 0.1);
+}
+@media (min-width: 375px) {
+  .iphone-x {
+    margin: 40px auto;
+    border-radius: 40px;
+    height: 780px;
+    width: 360px;
+  }
+}
+.iphone-x:before, .iphone-x:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.iphone-x:after {
+  bottom: 7px;
+  width: 140px;
+  height: 4px;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+}
+.iphone-x:before {
+  top: 0px;
+  width: 56%;
+  height: 30px;
+  background-color: #f1f1f1;
+  border-radius: 0px 0px 40px 40px;
+  z-index: 2;
+}
+.iphone-x i,
+.iphone-x b,
+.iphone-x s,
+.iphone-x .content {
+  position: absolute;
+  display: block;
+  color: transparent;
+}
+.iphone-x i {
+  top: 0px;
+  left: 50%;
+  transform: translate(-50%, 6px);
+  height: 8px;
+  width: 15%;
+  background-color: #dfdfdf;
+  border-radius: 8px;
+  box-shadow: inset 0px -3px 3px 0px rgba(255, 255, 255, 0.2);
+  z-index: 3;
+}
+.iphone-x b {
+  left: 10%;
+  top: 0px;
+  transform: translate(180px, 4px);
+  width: 12px;
+  height: 12px;
+  background-color: #d5d5d5;
+  border-radius: 12px;
+  box-shadow: inset 0px -3px 2px 0px rgba(255, 255, 255, 0.2);
+  z-index: 3;
+}
+.iphone-x b:after {
+  content: "";
+  position: absolute;
+  background-color: #adadad;
+  width: 6px;
+  height: 6px;
+  top: 2px;
+  left: 2px;
+  top: 3px;
+  left: 3px;
+  display: block;
+  border-radius: 4px;
+  box-shadow: inset 0px -2px 2px rgba(0, 0, 0, 0.2);
+}
+.iphone-x .content {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  z-index: 1;
+  color: red;
+  background: #fbfbfb;
+  position: relative;
+  border-radius: 0;
+}
+@media (min-width: 375px) {
+  .iphone-x .content {
+    border-radius: 40px;
+  }
+}
+
+main {
+  font-family: "Poppins", sans-serif;
+  color: #fbfbfb;
+  position: relative;
+  height: 100%;
+}
+
+.intro {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  height: 50%;
+  padding: 1rem;
+  padding-top: 30%;
+  background: linear-gradient(transparent, white, white, white);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.intro__title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #262a2f;
+  margin-bottom: 1.5rem;
+}
+.intro__description {
+  text-align: center;
+  font-weight: 400;
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.35);
+  margin-bottom: 1.5rem;
+}
+.intro__button button {
+  border: 0;
+  outline: none;
+  padding: 1rem 1.5rem;
+  background: #f4b7a8;
+  border-radius: 60px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fbfbfb;
+  transition: ease all 0.3s;
+}
+.intro__button button:hover {
+  background: #ff6f4c;
+}
+
+.launch {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
+.launch .wrapper-images {
+  display: flex;
+  flex-direction: column;
+  height: 150vh;
+  justify-content: center;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  opacity: 0.8;
+  transform: translate3d(-50%, -50%, 0) perspective(800px) rotatey(10deg) rotate(-10deg);
+}
+.launch .images-line {
+  -webkit-animation: runner 20s linear infinite;
+          animation: runner 20s linear infinite;
+  display: flex;
+  transform: translateX(23%);
+}
+.launch .images-line:nth-child(even) {
+  -webkit-animation-duration: 30s;
+          animation-duration: 30s;
+}
+.launch .images-line .line {
+  background-position: 50% 50%;
+  background-size: cover;
+  flex: none;
+  width: 7rem;
+  height: 10em;
+  margin: clamp(10px, 2vw, 20px);
+  position: relative;
+  transition: ease-in-out all 0.3s;
+  border-radius: 1rem;
+}
+.launch .images-line .line .img {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-position: 50% 50%;
+  background-size: cover;
+  transition: ease-in-out all 0.3s;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+.launch .images-line .line:hover .img {
+  cursor: pointer;
+  transform: scale(1.1) translatez(0px);
+}
+.launch .images-line .line:hover:after {
+  filter: blur(35px) opacity(0.8);
+}
+.launch .images-line .line:after {
+  content: "";
+  background: inherit;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  top: 3vh;
+  position: absolute;
+  background-size: cover;
+  z-index: -1;
+  transition: ease-in-out all 0.3s;
+  filter: blur(25px) opacity(0.8);
+}
+
+.hero {
+  aspect-ratio: 2/2;
+  background: var(--bg) no-repeat center center;
+  background-size: 120% 120%;
+  background-position: 100% 50%;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 1rem;
+}
+.hero__title {
+  font-weight: 700;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  margin-bottom: 0.5rem;
+}
+.hero__price {
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 0.7rem 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 1.2rem;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  box-shadow: 1px 1px 0 0 rgba(255, 255, 255, 0.6);
+}
+.hero__price span {
+  font-weight: 700;
+}
+
+.card-nft {
+  aspect-ratio: 2.3/3;
+  background: var(--bg) no-repeat center center;
+  background-size: auto 100%;
+  border-radius: 35px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: ease all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.card-nft:hover {
+  background-size: auto 110%;
+}
+.card-nft:after {
+  position: absolute;
+  content: "";
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  height: 50%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+}
+.card-nft > * {
+  z-index: 1;
+}
+.card-nft__title {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+.card-nft__deal {
+  border: 0;
+  border-radius: 100%;
+  width: 32px;
+  height: 32px;
+}
+.card-nft__deal svg {
+  transition: ease all 0.2s;
+  transform-origin: bottom right;
+}
+.card-nft__deal:hover svg {
+  transform: rotate(10deg);
+}
+.card-nft__price {
+  font-weight: 500;
+  font-size: 0.6rem;
+  padding: 0.7rem 0.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  box-shadow: 1px 1px 0 0 rgba(255, 255, 255, 0.6);
+}
+.card-nft__price span {
+  font-weight: 700;
+}
+
+.filters > button {
+  background: #303841;
+  border: 0;
+  outline: none;
+  color: #fbfbfb;
+}
+.filters > button .icon {
+  background: #fbfbfb;
+}
+.filters > button .icon svg {
+  stroke: #303841;
+}
+
+.menu {
+  position: sticky;
+  bottom: 1rem;
+  left: 50%;
+  transform: translatex(-50%);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  z-index: 3;
+}
+.menu > button {
+  background: #303841;
+  border: 0;
+  outline: none;
+  color: #fbfbfb;
+  box-shadow: 0 10px 20px -5px rgba(48, 56, 65, 0.4);
+}
+
+/*Dev*/
+#dev {
+  font-family: "Montserrat", sans-serif;
+  position: fixed;
+  font-size: clamp(8px, 3vw, 14px);
+  top: 10px;
+  left: 10px;
+  padding: 1em;
+  color: #383838;
+  background-color: white;
+  border-radius: 25px;
+  cursor: pointer;
+  z-index: 10;
+}
+#dev a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #383838;
+  transition: ease all 0.3s;
+}
+#dev a:hover {
+  color: #ef5350;
+  text-decoration: underline;
+}
+#dev span {
+  display: inline-block;
+  transition: ease all 0.3s;
+  color: pink;
+}
+#dev span:hover {
+  transform: scale(1.2);
+}
+
+@-webkit-keyframes runner {
+  to {
+    transform: translateX(-10.3%);
+  }
+}
+
+@keyframes runner {
+  to {
+    transform: translateX(-10.3%);
+  }
+}
+</style>
+<!-- partial -->
+  <script src='https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js'></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+
+    <title>Login</title>
+    <!-- Add your CSS styling here -->
+    <style>
+    
+        .login-form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+            width: 100%;
+            text-align: center;
+            .box-shadow {
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Horizontal offset, Vertical offset, Blur radius, Spread radius, Color */
+            }
+
+        }
+        .login-form input[type="text"],
+        .login-form input[type="password"],
+        .login-form button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .login-form button {
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+        .login-form button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+   
+</body>
+</html>
